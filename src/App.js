@@ -63,6 +63,7 @@ function App() {
           email: "",
           gender: "",
           hobies: [],
+          country: "",
         }}
         onSubmit={(values) => {
           console.log(values);
@@ -136,11 +137,18 @@ function App() {
             </div>
 
             <br />
+            <br />
+
+            <select name="country" onChange={handleChange}>
+              <option value="TR">Turkey</option>
+              <option value="EN">England</option>
+              <option value="USA">USA</option>
+            </select>
+
+            <br />
+            <br />
 
             <button type="submit">Submit</button>
-
-            <br />
-            <br />
           </form>
         )}
       </Formik>{" "}
