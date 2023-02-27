@@ -61,6 +61,7 @@ function App() {
           firstName: "",
           lastName: "",
           email: "",
+          gender: "",
         }}
         onSubmit={(values) => {
           console.log(values);
@@ -86,7 +87,29 @@ function App() {
             <br />
             <br />
 
+            <span>Male</span>
+            <input
+              type="radio"
+              name="gender"
+              value="male"
+              onChange={handleChange}
+            />
+
+            <span>Female</span>
+            <input
+              type="radio"
+              name="gender"
+              value="female"
+              onChange={handleChange}
+            />
+
+            <br />
+            <br />
+
             <button type="submit">Submit</button>
+
+            <br />
+            <br />
           </form>
         )}
       </Formik>{" "}
