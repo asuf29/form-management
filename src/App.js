@@ -62,6 +62,7 @@ function App() {
           lastName: "",
           email: "",
           gender: "",
+          hobies: [],
         }}
         onSubmit={(values) => {
           console.log(values);
@@ -104,6 +105,36 @@ function App() {
             />
 
             <br />
+            <br />
+
+            <div>
+              <input
+                type="checkbox"
+                name="hobies"
+                value="football"
+                onChange={handleChange}
+              />
+              Football
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="hobies"
+                value="cinema"
+                onChange={handleChange}
+              />
+              Cinema
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="hobies"
+                value="photography"
+                onChange={handleChange}
+              />
+              Photography
+            </div>
+
             <br />
 
             <button type="submit">Submit</button>
