@@ -49,109 +49,217 @@
 // export default App;
 
 //handleSubmit & handleChange
+// import "./App.css";
+// import { Formik } from "formik";
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <h1>Sign Up</h1>
+//       <Formik
+//         initialValues={{
+//           firstName: "",
+//           lastName: "",
+//           email: "",
+//           gender: "",
+//           hobies: [],
+//           country: "",
+//         }}
+//         onSubmit={(values) => {
+//           console.log(values);
+//         }}
+//       >
+//         {({ handleSubmit, handleChange }) => (
+//           <form onSubmit={handleSubmit}>
+//             <label htmlFor="firstName">First Name</label>
+//             <input name="firstName" onChange={handleChange} />
+
+//             <br />
+//             <br />
+
+//             <label htmlFor="lastName">Last Name</label>
+//             <input name="lastName" onChange={handleChange} />
+
+//             <br />
+//             <br />
+
+//             <label htmlFor="email">Email</label>
+//             <input name="email" onChange={handleChange} />
+
+//             <br />
+//             <br />
+
+//             <span>Male</span>
+//             <input
+//               type="radio"
+//               name="gender"
+//               value="male"
+//               onChange={handleChange}
+//             />
+
+//             <span>Female</span>
+//             <input
+//               type="radio"
+//               name="gender"
+//               value="female"
+//               onChange={handleChange}
+//             />
+
+//             <br />
+//             <br />
+
+//             <div>
+//               <input
+//                 type="checkbox"
+//                 name="hobies"
+//                 value="football"
+//                 onChange={handleChange}
+//               />
+//               Football
+//             </div>
+//             <div>
+//               <input
+//                 type="checkbox"
+//                 name="hobies"
+//                 value="cinema"
+//                 onChange={handleChange}
+//               />
+//               Cinema
+//             </div>
+//             <div>
+//               <input
+//                 type="checkbox"
+//                 name="hobies"
+//                 value="photography"
+//                 onChange={handleChange}
+//               />
+//               Photography
+//             </div>
+
+//             <br />
+//             <br />
+
+//             <select name="country" onChange={handleChange}>
+//               <option value="TR">Turkey</option>
+//               <option value="EN">England</option>
+//               <option value="USA">USA</option>
+//             </select>
+
+//             <br />
+//             <br />
+
+//             <button type="submit">Submit</button>
+//           </form>
+//         )}
+//       </Formik>{" "}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+//useFormik
 import "./App.css";
-import { Formik } from "formik";
+import { useFormik } from "formik";
 
 function App() {
+  const { handleSubmit, handleChange } = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      gender: "",
+      hobies: [],
+      country: "",
+    },
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
   return (
     <div className="App">
       <h1>Sign Up</h1>
-      <Formik
-        initialValues={{
-          firstName: "",
-          lastName: "",
-          email: "",
-          gender: "",
-          hobies: [],
-          country: "",
-        }}
-        onSubmit={(values) => {
-          console.log(values);
-        }}
-      >
-        {({ handleSubmit, handleChange }) => (
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="firstName">First Name</label>
-            <input name="firstName" onChange={handleChange} />
 
-            <br />
-            <br />
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="firstName">First Name</label>
+        <input name="firstName" onChange={handleChange} />
 
-            <label htmlFor="lastName">Last Name</label>
-            <input name="lastName" onChange={handleChange} />
+        <br />
+        <br />
 
-            <br />
-            <br />
+        <label htmlFor="lastName">Last Name</label>
+        <input name="lastName" onChange={handleChange} />
 
-            <label htmlFor="email">Email</label>
-            <input name="email" onChange={handleChange} />
+        <br />
+        <br />
 
-            <br />
-            <br />
+        <label htmlFor="email">Email</label>
+        <input name="email" onChange={handleChange} />
 
-            <span>Male</span>
-            <input
-              type="radio"
-              name="gender"
-              value="male"
-              onChange={handleChange}
-            />
+        <br />
+        <br />
 
-            <span>Female</span>
-            <input
-              type="radio"
-              name="gender"
-              value="female"
-              onChange={handleChange}
-            />
+        <span>Male</span>
+        <input
+          type="radio"
+          name="gender"
+          value="male"
+          onChange={handleChange}
+        />
 
-            <br />
-            <br />
+        <span>Female</span>
+        <input
+          type="radio"
+          name="gender"
+          value="female"
+          onChange={handleChange}
+        />
 
-            <div>
-              <input
-                type="checkbox"
-                name="hobies"
-                value="football"
-                onChange={handleChange}
-              />
-              Football
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="hobies"
-                value="cinema"
-                onChange={handleChange}
-              />
-              Cinema
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="hobies"
-                value="photography"
-                onChange={handleChange}
-              />
-              Photography
-            </div>
+        <br />
+        <br />
 
-            <br />
-            <br />
+        <div>
+          <input
+            type="checkbox"
+            name="hobies"
+            value="football"
+            onChange={handleChange}
+          />
+          Football
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="hobies"
+            value="cinema"
+            onChange={handleChange}
+          />
+          Cinema
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="hobies"
+            value="photography"
+            onChange={handleChange}
+          />
+          Photography
+        </div>
 
-            <select name="country" onChange={handleChange}>
-              <option value="TR">Turkey</option>
-              <option value="EN">England</option>
-              <option value="USA">USA</option>
-            </select>
+        <br />
+        <br />
 
-            <br />
-            <br />
+        <select name="country" onChange={handleChange}>
+          <option value="TR">Turkey</option>
+          <option value="EN">England</option>
+          <option value="USA">USA</option>
+        </select>
 
-            <button type="submit">Submit</button>
-          </form>
-        )}
-      </Formik>{" "}
+        <br />
+        <br />
+
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
