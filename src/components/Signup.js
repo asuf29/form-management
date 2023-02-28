@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-
+import validationSchema from "./Validations";
 function Signup() {
   const { handleSubmit, handleChange } = useFormik({
     initialValues: {
@@ -10,6 +10,7 @@ function Signup() {
     onSubmit: (values) => {
       console.log(values);
     },
+    validationSchema,
   });
   return (
     <div>
